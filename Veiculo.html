@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <nav><a href="lojaCarros.html">Inicio</a><a href="Marca.html">Marca</a><a href="Modelo.html">Modelo</a><a href="Veiculo.html">Veiculo</a></nav>
+        <h1>Cadastro de veiculo</h1>
+        <form id="veiculo" onsubmit = "return cadastrarVeiculo(this)">
+            <label for="cars">Modelo</label>
+            <select name="cars" id="cars" name="cars">
+                <option value="Chevrolet">Volvo</option>
+                <option value="Ford">Saab</option>
+                <option value="Renault">Mercedes</option>
+            </select><br><br>
+            <label for ="myfile">Imagem</label>
+            <input type="file" id="myFile" name="filename"><br><br>
+            <label for ="cor">Cor</label>
+            <input type="color" id="cor" name="cor"><br><br>
+            <label for="km">KM</label>
+            <input type="number" name="km"><br><br>
+            <label for="valor">Valor</label>
+            <input type="number" name="valor"><br><br>
+            <input type="submit" for="veiculo">
+        </form>
+
+    </body>
+</html>

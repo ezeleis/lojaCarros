@@ -18,46 +18,48 @@
 
 // Ex 10 - Persistir informações no Localstorage e algumas melhorias
 
-var marcas = [];
+// var marcas = []; 
 
-function cadastrarMarca(marca){
-    mensagem = console.log(marca);
-    marcas.push(marca);
-    console.log("Marca cadastrada com suceso!");
-    return;
-}
+// function cadastrarMarca(marca){
+//     marcas.push(marca);
+//     console.log("Marca cadastrada com suceso!");
+//     console.log(marca);
+//     return;
+//}
 
 // cadastrarMarca("Chevrolet");
 // cadastrarMarca("Ford");
 // cadastrarMarca("Renault");
 // console.log(marcas);
 
-var modelos = [];
+// var modelos = [];
 
-function cadastrarModelo(modelo){
-    modelos.push(modelo);
-    console.log("Modelo cadastrado con suceso!")
-    console.log(modelo);
-    return;
-}
-// cadastrarModelo("Onix");
-// cadastrarModelo("Ka");
-// cadastrarModelo("Kwid");
-// console.log(modelos);
+// function cadastrarModelo(modelo){
+//     modelos.push(modelo);
+//     console.log("Modelo cadastrado con suceso!")
+//     console.log(modelo);
+//     return;
+// }
+// // cadastrarModelo("Onix");
+// // cadastrarModelo("Ka");
+// // cadastrarModelo("Kwid");
+// // console.log(modelos);
 
 var veiculos = [];
 
 function cadastrarVeiculo(marca, modelo, veiculo, km, valor, cor){
     veiculos.push([marca, modelo, veiculo, km, valor, cor]) ;
-    console.log("Veiculo cadastrado com suceso!");
-    return;
+    console.log('Veiculo cadastrado com suceso!');
 }
 
 cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
 cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
-console.log(veiculos);
+cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
 
-
-function listaVeiculos(){
-    
+function listarVeiculo(){
+    for (let veiculo in veiculos){
+        
+        console.log(veiculo);
+    }
 }
+listarVeiculo();
