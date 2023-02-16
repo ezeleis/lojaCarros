@@ -1,0 +1,21 @@
+nav{
+    display:flex;
+    justify-content: space-around;
+    font-size:25px;
+    color:rgb(206, 100, 100);
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    text-align: center;
+}
+
+.class1#barraNavSup{
+    text-shadow: 10px 10px 10px #000000;
+
+}
+
+#barraNavInf{
+    display: flex;
+    align-self:flex-end;
+}

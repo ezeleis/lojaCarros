@@ -18,32 +18,32 @@
 
 // Ex 10 - Persistir informações no Localstorage e algumas melhorias
 
-// var marcas = []; 
+var marcas = []; 
 
-// function cadastrarMarca(marca){
-//     marcas.push(marca);
-//     console.log("Marca cadastrada com suceso!");
-//     console.log(marca);
-//     return;
-//}
+function cadastrarMarca(marca){
+    marcas.push(marca);
+    console.log("Marca cadastrada com suceso!");
+    console.log(marca);
+    return;
+}
 
-// cadastrarMarca("Chevrolet");
-// cadastrarMarca("Ford");
-// cadastrarMarca("Renault");
-// console.log(marcas);
+cadastrarMarca("Chevrolet");
+cadastrarMarca("Ford");
+cadastrarMarca("Renault");
+console.log(marcas);
 
-// var modelos = [];
+var modelos = [];
 
-// function cadastrarModelo(modelo){
-//     modelos.push(modelo);
-//     console.log("Modelo cadastrado con suceso!")
-//     console.log(modelo);
-//     return;
-// }
-// // cadastrarModelo("Onix");
-// // cadastrarModelo("Ka");
-// // cadastrarModelo("Kwid");
-// // console.log(modelos);
+function cadastrarModelo(modelo){
+    modelos.push(modelo);
+    console.log("Modelo cadastrado con suceso!")
+    console.log(modelo);
+    return;
+}
+cadastrarModelo("Onix");
+cadastrarModelo("Ka");
+cadastrarModelo("Kwid");
+console.log(modelos);
 
 var veiculos = [];
 
@@ -56,10 +56,20 @@ cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
 cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
 cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
 
+
 function listarVeiculo(){
-    for (let veiculo in veiculos){
-        
-        console.log(veiculo);
+    for (var v in veiculos){
+        const objVeiculo = {
+            Marca:"",Modelo:"",Veiculo:"",km:"",valor:"",cor:"",
+        }
+        let veiculo= veiculos[v];
+        objVeiculo.Marca=veiculo[0];
+        objVeiculo.Modelo=veiculo[1];
+        objVeiculo.Veiculo=veiculo[2];
+        objVeiculo.km=veiculo[3];
+        objVeiculo.valor=veiculo[4];
+        objVeiculo.cor=veiculo[5];
+        console.log(objVeiculo);
     }
 }
-listarVeiculo();
+listarVeiculo(0);
