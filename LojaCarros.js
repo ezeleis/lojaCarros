@@ -20,41 +20,41 @@
 
 var marcas = []; 
 
-function cadastrarMarca(marca){
+function cadastrarMarca(){
+    var marca = document.getElementById("Marca").value;
     marcas.push(marca);
     console.log("Marca cadastrada com suceso!");
     console.log(marca);
-    return;
-}
+};
 
-cadastrarMarca("Chevrolet");
-cadastrarMarca("Ford");
-cadastrarMarca("Renault");
-console.log(marcas);
+// cadastrarMarca("Chevrolet");
+// cadastrarMarca("Ford");
+// cadastrarMarca("Renault");
+// console.log(marcas);
 
 var modelos = [];
 
-function cadastrarModelo(modelo){
+function cadastrarModelo(){
+    var modelo = document.getElementById("Modelo").value;
     modelos.push(modelo);
-    console.log("Modelo cadastrado con suceso!")
+    console.log("Modelo cadastrado con suceso!");
     console.log(modelo);
-    return;
-}
-cadastrarModelo("Onix");
-cadastrarModelo("Ka");
-cadastrarModelo("Kwid");
-console.log(modelos);
+};
+// cadastrarModelo("Onix");
+// cadastrarModelo("Ka");
+// cadastrarModelo("Kwid");
+// console.log(modelos);
 
 var veiculos = [];
 
 function cadastrarVeiculo(marca, modelo, veiculo, km, valor, cor){
     veiculos.push([marca, modelo, veiculo, km, valor, cor]) ;
     console.log('Veiculo cadastrado com suceso!');
-}
+};
 
-cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
-cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
-cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
+// cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
+// cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
+// cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
 
 
 function listarVeiculo(){
@@ -71,5 +71,4 @@ function listarVeiculo(){
         objVeiculo.cor=veiculo[5];
         console.log(objVeiculo);
     }
-}
-listarVeiculo(0);
+};
