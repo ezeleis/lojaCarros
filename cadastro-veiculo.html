@@ -4,24 +4,25 @@
     <body>
         <nav><a href="index.html">Inicio</a><a href="Cadastro-marca.html">Marca</a><a href="cadastro-modelo.html">Modelo</a><a href="cadastro-veiculo.html">Veiculo</a></nav>
         <h1>Cadastro de veiculo</h1>
-        <form id="veiculo" onsubmit = "return cadastrarVeiculo(this)">
+      
             <label for="cars">Modelo</label>
-            <select name="cars" id="cars" name="cars">
-                <option value="Chevrolet">Volvo</option>
-                <option value="Ford">Saab</option>
-                <option value="Renault">Mercedes</option>
+            <select name="cars" id="cars">
+                <option>Chevrolet Onix</option>
+                <option>Ford Ka</option>
+                <option>Renault Kwid</option>
             </select><br><br>
             <label for ="myfile">Imagem</label>
-            <input type="file" id="myFile" name="filename"><br><br>
+                <input type="file" id="imagem" name="filename"><br><br>
             <label for ="cor">Cor</label>
-            <input type="color" id="cor" name="cor"><br><br>
+                <input type="color" id="cor" name="cor"><br><br>
             <label for="km">KM</label>
-            <input type="number" name="km"><br><br>
+                <input type="number" name="km" id="km"><br><br>
             <label for="valor">Valor</label>
-            <input type="number" name="valor"><br><br>
-            <input type="submit" for="veiculo" onclick="cadastrarVeiculo(marca, modelo, veiculo, km, valor, cor)">
+                <input type="number" name="valor" id ="valor"><br><br>
+            <input type="submit" for="veiculo" onclick="cadastrarVeiculo()">
             <script src="LojaCarros.js"></script>
-        </form>
+    
+        <script src="LojaCarros.js"></script>
 
     </body>
 </html>

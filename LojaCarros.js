@@ -20,12 +20,12 @@
 
 var marcas = []; 
 
-function cadastrarMarca(marca){
+function cadastrarMarca(){
+    let marca = document.getElementById("Marca").value;
     marcas.push(marca);
     console.log("Marca cadastrada com suceso!");
     console.log(marca);
-    return;
-}
+};
 
 // cadastrarMarca("Chevrolet");
 // cadastrarMarca("Ford");
@@ -34,11 +34,13 @@ function cadastrarMarca(marca){
 
 var modelos = [];
 
-function cadastrarModelo(modelo){
+function cadastrarModelo(){
+    const modelo = {};
+    modelo[document.getElementById("cars").value] = document.getElementById("Modelo").value; 
     modelos.push(modelo);
-    console.log("Modelo cadastrado con suceso!")
+    document.createElement("option")
+    console.log("Modelo cadastrado con suceso!");
     console.log(modelo);
-    return;
 }
 // cadastrarModelo("Onix");
 // cadastrarModelo("Ka");
@@ -47,15 +49,23 @@ function cadastrarModelo(modelo){
 
 var veiculos = [];
 
-function cadastrarVeiculo(marca, modelo, veiculo, km, valor, cor){
-    veiculos.push([marca, modelo, veiculo, km, valor, cor]) ;
+function cadastrarVeiculo(){
+    const veiculo = {};
+    // veiculo.marca = document.getElementById("cars").value;
+    veiculo.modelo = document.getElementById("cars").value;
+    veiculo.imagem = document.getElementById("imagem").src;
+    veiculo.cor = document.getElementById("cor").value;
+    veiculo.km = document.getElementById ("km").value;
+    veiculo.valor = document.getElementById("valor").value;
+    veiculos.push(veiculo);
     console.log('Veiculo cadastrado com suceso!');
-}
+    console.log(veiculo);
+};
 
-cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
-cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
-cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
-console.log(veiculos);
+// cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
+// cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
+// cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
+// console.log(veiculos);
 
 var objVeiculo = {
     Marca:"",Modelo:"",Veiculo:"",km:"",valor:"",cor:"",
