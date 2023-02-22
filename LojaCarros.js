@@ -27,10 +27,10 @@ function cadastrarMarca(marca){
     return;
 }
 
-cadastrarMarca("Chevrolet");
-cadastrarMarca("Ford");
-cadastrarMarca("Renault");
-console.log(marcas);
+// cadastrarMarca("Chevrolet");
+// cadastrarMarca("Ford");
+// cadastrarMarca("Renault");
+// console.log(marcas);
 
 var modelos = [];
 
@@ -40,10 +40,10 @@ function cadastrarModelo(modelo){
     console.log(modelo);
     return;
 }
-cadastrarModelo("Onix");
-cadastrarModelo("Ka");
-cadastrarModelo("Kwid");
-console.log(modelos);
+// cadastrarModelo("Onix");
+// cadastrarModelo("Ka");
+// cadastrarModelo("Kwid");
+// console.log(modelos);
 
 var veiculos = [];
 
@@ -55,13 +55,14 @@ function cadastrarVeiculo(marca, modelo, veiculo, km, valor, cor){
 cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
 cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
 cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
+console.log(veiculos);
 
+var objVeiculo = {
+    Marca:"",Modelo:"",Veiculo:"",km:"",valor:"",cor:"",
+}
 
 function listarVeiculo(){
-    for (var v in veiculos){
-        const objVeiculo = {
-            Marca:"",Modelo:"",Veiculo:"",km:"",valor:"",cor:"",
-        }
+    for (let v in veiculos){
         let veiculo= veiculos[v];
         objVeiculo.Marca=veiculo[0];
         objVeiculo.Modelo=veiculo[1];
@@ -70,6 +71,7 @@ function listarVeiculo(){
         objVeiculo.valor=veiculo[4];
         objVeiculo.cor=veiculo[5];
         console.log(objVeiculo);
+        return objVeiculo;
     }
 }
-listarVeiculo(0);
+listarVeiculo();
