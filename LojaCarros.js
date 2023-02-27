@@ -61,9 +61,9 @@ function listarVeiculos(){
         let modelo = document.createElement("h1");
         modelo.innerHTML = objVeiculo.modelo;
         let km = document.createElement("h2");
-        km.innerHTML = objVeiculo.km;
+        km.innerHTML =`KM ${objVeiculo.km} rodados` ;
         let valor = document.createElement("h2");
-        valor.innerHTML = objVeiculo.valor;
+        valor.innerHTML = `R$${objVeiculo.valor}`;
         let cor = document.createElement("h2");
         cor.innerHTML = objVeiculo.cor;
         
@@ -71,7 +71,7 @@ function listarVeiculos(){
         descricao.appendChild(modelo);
         descricao.appendChild(km);
         descricao.appendChild(valor);
-        descricao.appendChild(cor);
+       
         
         document.getElementById("listaCarros").appendChild(card);
         if (objVeiculo.modelo == "Chevrolet Onix"){
