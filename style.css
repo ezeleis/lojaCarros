@@ -8,6 +8,7 @@ nav{
 
 body{
     text-align: center;
+    mix-blend-mode: multiply;
 }
 
 .class1#barraNavSup{
@@ -19,3 +20,41 @@ body{
     display: flex;
     align-self:flex-end;
 }
+
+#listaCarros{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+
+}
+
+#card{
+    display:flex;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top:10px;
+    align-items: stretch;
+    width: 250px;
+    height: 400px;
+    background-image: linear-gradient(rgb(226, 99, 99),rgb(184, 243, 107));
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    flex-wrap: wrap ;
+    border-radius: 10%; 
+    text-align: center ;
+    justify-content:center;
+}
+
+img {
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    border-radius: 5px 5px 0 0;
+    max-height:200px;
+    max-width:200px;
+    width:auto;
+    overflow:hidden;
+    mix-blend-mode: multiply;
+    
+  }
+
+
+
+  

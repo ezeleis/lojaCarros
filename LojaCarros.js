@@ -32,7 +32,7 @@ var veiculos = [];
 function cadastrarVeiculo(){
     const veiculo = {};
     veiculo.modelo = document.getElementById("cars").value;
-    veiculo.imagem = document.getElementById("imagem").src;
+    veiculo.imagem = document.getElementById("imagem").value;
     veiculo.cor = document.getElementById("cor").value;
     veiculo.km = document.getElementById ("km").value;
     veiculo.valor = document.getElementById("valor").value;
@@ -48,41 +48,48 @@ function cadastrarVeiculo(){
 // cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
 // console.log(veiculos);
 
-
-
-// function listarVeiculos(){
-//     let veiculosJSON = document.getElementById("veiculos");
-//     let veiculosLista = JSON.parse(veiculosJSON);
-//     let objVeiculo = {
-//         Marca:"",Modelo:"",Veiculo:"",km:"",valor:"",cor:"",
-//     }
-//     for (let v in veiculosLista){
-//         let veiculoLista= veiculosLista[v];
-//         objVeiculo.Marca=veiculoLista[0];
-//         objVeiculo.Modelo=veiculoLista[1];
-//         objVeiculo.Veiculo=veiculoLista[2];
-//         objVeiculo.km=veiculoLista[3];
-//         objVeiculo.valor=veiculoLista[4];
-//         objVeiculo.cor=veiculoLista[5];
-//         console.log(objVeiculo);
-//         var card = document.createElement("div");
-//         var descricao = document.creatElement("p");
-//         document.getElementById("listaCarros").appendChild(card);
-//         card.appendChild(descricao);
-//     }
-// }
-
 function listarVeiculos(){
     let veiculosJSON = localStorage.getItem("veiculos");
     let veiculosParse = JSON.parse(veiculosJSON);
     console.log(veiculosJSON);
     console.log(veiculosParse);
     for (let veiculo in veiculosParse){
-       let objVeiculo = (veiculosParse[veiculo]);
-       let card = document.createElement("div");
-       let descricao = document.createElement("p");
-       card.appendChild(descricao);
-       document.getElementById("listaCarros").appendChild(card);
+        let objVeiculo = (veiculosParse[veiculo]);
+        let card = document.createElement("div");
+        card.id = "card";
+        let descricao = document.createElement("p");
+        let modelo = document.createElement("h1");
+        modelo.innerHTML = objVeiculo.modelo;
+        let km = document.createElement("h2");
+        km.innerHTML = objVeiculo.km;
+        let valor = document.createElement("h2");
+        valor.innerHTML = objVeiculo.valor;
+        let cor = document.createElement("h2");
+        cor.innerHTML = objVeiculo.cor;
+        
+        card.appendChild(descricao);
+        descricao.appendChild(modelo);
+        descricao.appendChild(km);
+        descricao.appendChild(valor);
+        descricao.appendChild(cor);
+        
+        document.getElementById("listaCarros").appendChild(card);
+        if (objVeiculo.modelo == "Chevrolet Onix"){
+            let imagem = document.createElement("img");
+            imagem.src = "descarga.jpeg";
+            descricao.appendChild(imagem);
+        }
+        else if(objVeiculo.modelo == "Ford Ka"){
+            let imagem = document.createElement("img");
+            imagem.src = "Ford Ka.jpeg";
+            descricao.appendChild(imagem);
+        }
+        else if(objVeiculo.modelo == "Renault Kwid"){
+            let imagem = document.createElement("img");
+            imagem.src = "Kwid.jpeg";
+            descricao.appendChild(imagem);
+        }
+
     }
+
 }
-;
