@@ -1,3 +1,4 @@
+//Ex 1
 var marcas = []; 
 
 function cadastrarMarca(){
@@ -12,6 +13,8 @@ function cadastrarMarca(){
 // cadastrarMarca("Renault");
 // console.log(marcas);
 
+
+//Ex2
 var modelos = [];
 
 function cadastrarModelo(){
@@ -27,6 +30,8 @@ function cadastrarModelo(){
 // cadastrarModelo("Kwid");
 // console.log(modelos);
 
+
+//Ex 3
 var veiculos = [];
 
 function cadastrarVeiculo(){
@@ -36,6 +41,7 @@ function cadastrarVeiculo(){
     veiculo.cor = document.getElementById("cor").value;
     veiculo.km = document.getElementById ("km").value;
     veiculo.valor = document.getElementById("valor").value;
+    veiculo.foiVendido = false;
     veiculos.push(veiculo);
     console.log('Veiculo cadastrado com suceso!');
     console.log(veiculo);
@@ -43,10 +49,13 @@ function cadastrarVeiculo(){
     localStorage.setItem("veiculos",veiculosJSON);
 };
 
+//Ex 4
 //cadastrarVeiculo("Chevrolet", "Onix", "Localiza", "30000", "40000","branco");
 // cadastrarVeiculo("Ford", "Festa", "RentCars", "500000", "30000","cinza");
 // cadastrarVeiculo("Renault", "Kwid", "eletrico", "0", "150000","rosa");
 // console.log(veiculos);
+
+
 
 function listarVeiculos(){
     let veiculosJSON = localStorage.getItem("veiculos");
@@ -56,7 +65,9 @@ function listarVeiculos(){
     for (let veiculo in veiculosParse){
         let objVeiculo = (veiculosParse[veiculo]);
         let card = document.createElement("div");
-        card.id = "card";
+        card.classList.add("cartaoVeiculo");
+        card.id = `${objVeiculo.modelo}${veiculo}`;
+        
         let descricao = document.createElement("p");
         let modelo = document.createElement("h1");
         modelo.innerHTML = objVeiculo.modelo;
@@ -66,13 +77,20 @@ function listarVeiculos(){
         valor.innerHTML = `R$${objVeiculo.valor}`;
         let cor = document.createElement("h2");
         cor.innerHTML = objVeiculo.cor;
-        
+        //Bonus Track "botao vendido"
+        let foiVendido = document.createElement("button");
+        foiVendido.innerHTML = "Vendido";
+        foiVendido.onclick = ()=>objVeiculo.foiVendido=true;
+        foiVendido.onclick= ()=>document.getElementById(`${objVeiculo.modelo}${veiculo}`).style.opacity= "0.5";
+
         card.appendChild(descricao);
+        card.appendChild(foiVendido);
         descricao.appendChild(modelo);
         descricao.appendChild(km);
         descricao.appendChild(valor);
        
         
+        //Gambiarra para imagem (imposivel acesar diretorio local desde o navegador)
         document.getElementById("listaCarros").appendChild(card);
         if (objVeiculo.modelo == "Chevrolet Onix"){
             let imagem = document.createElement("img");
@@ -93,3 +111,4 @@ function listarVeiculos(){
     }
 
 }
+
